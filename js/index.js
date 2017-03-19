@@ -8,7 +8,8 @@ $(function () {
     console.log($('.banner-contianer').offset().left);
     $("#pointer a:first-child").on('click',function (event) {
         if(page>0){
-            page--;
+            --page;
+            $('.page_item_span span').eq(page).addClass('current-index').siblings().removeClass();
            /* var currentLeft = $('.banner-contianer').offset().left;*/
             currentLeft+=perAnimater;
             $('.banner-contianer').animate({left:currentLeft},'slow');
@@ -18,11 +19,18 @@ $(function () {
     });
     $("#pointer a:last-child").on('click',function (event) {
        if(page<4){
+           ++page;
         /*   var currentLeft = $('.banner-contianer').offset().left;*/
+           $('.page_item_span span').eq(page).addClass('current-index').siblings().removeClass();
            currentLeft-=perAnimater;
            $('.banner-contianer').animate({left:currentLeft},'slow');
-           page++;
            console.log(page +" :"+ currentLeft);
        }
     });
+    $(".page_item_span span").on('click',function (event) {
+          page=$(this).index();
+         $('.page_item_span span').eq(page).addClass('current-index').siblings().removeClass();
+        currentLeft = -page*perAnimater;
+        $('.banner-contianer').animate({left:currentLeft},'slow');
+    })
 });

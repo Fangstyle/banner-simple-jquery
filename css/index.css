@@ -28,6 +28,7 @@
     height: 10px;
     border-radius: 5px;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .page_pointer {
@@ -73,4 +74,7 @@
 
 .banner ul img {
     width: 245px;
+}
+.page_item_span .current-index{
+    background-color: #f00;
 }
