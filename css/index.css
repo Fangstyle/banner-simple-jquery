@@ -49,15 +49,19 @@
 }
 
 .banner_content {
+    position: relative;
     width: 985px;
+    height: 475px;
     overflow: hidden;
     margin:  0 auto;
     background-color: #fefefe;
 }
 
 .banner ul {
+    position: absolute;
+    top:0;
+    left: 0;
     width: 3200px;
-
 }
 
 .banner ul li {
